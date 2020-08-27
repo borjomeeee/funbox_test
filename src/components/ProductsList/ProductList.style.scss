@@ -1,0 +1,19 @@
+.product-list {
+  &__title {
+    font-family: "Exo2.0";
+    font-size: 36px;
+
+    color: #fff;
+    
+    text-align: center;
+  }
+
+  &__container {
+    margin-top: 24px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 80px;
+  }
+}

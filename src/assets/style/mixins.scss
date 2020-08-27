@@ -1,0 +1,13 @@
+@mixin card($color) {
+  border-color: $color !important;
+
+  .card {
+    &__num-container {
+      background-color: $color !important;
+    }
+  }
+
+  &::after {
+    border-color: $color !important;
+  }
+}

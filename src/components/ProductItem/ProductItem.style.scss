@@ -1,0 +1,185 @@
+@import "../../assets/style/mixins.scss";
+
+.product-item {
+  .card {
+    position: relative;
+
+    width: 320px;
+    height: 480px;
+
+    border: 4px solid #1698d9;
+    border-radius: 12px;
+
+    padding: 21px 0px 0px 51px;
+
+    clip-path: polygon(
+      15% 0%,
+      80% 0%,
+      100% 0,
+      100% 100%,
+      80% 100%,
+      20% 100%,
+      0 100%,
+      0% 10%
+    );
+
+    background: url("../../assets/images/card-bg.png") top 208px center
+        no-repeat,
+      #f2f2f2;
+
+    cursor: pointer;
+
+    &__top-descr {
+      color: #666666;
+
+      font-size: 16px;
+
+      &_cancel {
+        color: #e52e7a;
+      }
+    }
+
+    &__title {
+      margin-top: 5px;
+
+      font-weight: bold;
+      font-size: 48px;
+    }
+
+    &__sub-title {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    &__content {
+      margin-top: 15px;
+    }
+
+    &__num-units,
+    &__num-surprise,
+    &__text-data {
+      color: #666666;
+    }
+
+    &__num-container {
+      position: absolute;
+
+      bottom: 16px;
+      right: 16px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 80px;
+      height: 80px;
+
+      border-radius: 50%;
+
+      color: #fff;
+      background-color: #1698d9;
+
+      &-top {
+        font-size: 42px;
+        line-height: 42px;
+      }
+
+      &-bot {
+        font-size: 22px;
+        line-height: 22px;
+      }
+    }
+
+    &__background-disabled {
+      position: absolute;
+
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      background-color: rgba(#f2f2f2, 0.5);
+    }
+  }
+
+  &__bot-descr {
+    margin-top: 14px;
+
+    color: #fff;
+    font-size: 13px;
+
+    text-align: center;
+
+    &_disabled {
+      color: #ffff66;
+    }
+
+    a {
+      color: #22a7e9;
+      border-bottom: 1px dashed #22a7e9;
+    }
+
+    span {
+      color: #22a7e9;
+    }
+  }
+
+  &__card {
+    position: relative;
+
+    &_hovered {
+      @include card(#2ea8e6);
+    }
+
+    &_selected {
+      @include card(#d91667);
+
+      &.product-item__card_hovered {
+        @include card(#e52e7a);
+      }
+    }
+
+    &_disabled {
+      background-color: #f2f2f2;
+
+      &__num-units,
+      &__num-surprise,
+      &__text-data,
+      &__top-descr,
+      &__title,
+      &__subtitle {
+        color:#b3b3b3;
+      }
+
+      @include card(#b3b3b3);
+
+      .card__num-container {
+        background-color: #979797 !important;
+        opacity: 100%;
+      }
+
+      cursor: default !important;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+
+      position: absolute;
+
+      top: -90px;
+      left: -79px;
+
+      width: 125px;
+      height: 125px;
+
+      transform-origin: center center;
+      transform: rotate(45deg);
+
+      border: 4px solid #1698d9;
+
+      box-sizing: border-box;
+    }
+  }
+}

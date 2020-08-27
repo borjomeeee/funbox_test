@@ -1,0 +1,53 @@
+@import "./fonts.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 14px;
+
+  list-style-type: none;
+  text-decoration: none;
+
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url("../images/bg.png") center center;
+  background-size: contain;
+}
+
+@media screen and (max-width: 1120px) {
+  .product-list {
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__title {
+      margin-top: 25px;
+    }
+
+    .product-item:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+}
